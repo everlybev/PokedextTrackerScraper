@@ -1,0 +1,31 @@
+This is the log of stuff:
+
+06/01/2022 08:42:47 PM
+serebii got response
+06/01/2022 08:42:47 PM
+Just started.  Not sending the email. 
+
+06/01/2022 08:42:58 PM
+serebii got response
+06/01/2022 08:42:59 PM
+New Info!
+
+06/10/2022 08:35:52 PM
+serebii got response
+06/10/2022 08:35:52 PM
+Just started.  Not sending the email. 
+
+06/10/2022 08:36:03 PM
+serebii got response
+06/10/2022 08:36:04 PM
+New Info!
+
+07/25/2022 08:12:39 PM
+pokedextracker got response
+07/25/2022 08:12:39 PM
+Just started.  Not sending the dex tracker email. 
+
+07/25/2022 08:12:47 PM
+pokedextracker got response
+07/25/2022 08:12:48 PM
+No New DSex Tracker Update
