@@ -92,13 +92,17 @@ def email(sites):
         msge.set_content(sites)
         server.send_message(msge, from_addr=myEmail, to_addrs=myEmail)
         server.quit()
-    except:
+    except Exception as anException:
         time.sleep(1)
         logger = open('Pokemon.txt', 'a')
         now = datetime.now()
         dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
         logger.write('\n')
         logger.write(dt_string + '\n')
+        try:
+            logger.write('The Exception was ' + str(anException) + '\n')
+        except:
+            pass
         logger.write(str('Failed to send email to me!'))
         logger.close()
         #Send email to others
@@ -237,14 +241,19 @@ def main():
             else:
                 try:
                     past_soup = Pokemon(count, past_soup)
-                except:
-                    msg = 'There was a main() error on dex tracker. Maybe check pokedextracker'
+                except Excepction as theMainException:
+                    print(theMainException)
+                    try:
+                        msg = 'There was a main() error on dex tracker. Maybe check pokedextracker.  The error is:\n' + str(theMainException)
+                    except:
+                        msg = 'There was a main() error on dex tracker. Maybe check pokedextracker'
                     email(msg)
                     logger = open('Pokemon.txt', 'a')
                     now = datetime.now()
                     dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
                     logger.write('\n')
                     logger.write(dt_string + '\n')
+                    logger.write(str(theMainException) + '\n')
                     logger.write('There was a main() error on dex tracker. \n' + '\n')
                     logger.close()
                 past = today
