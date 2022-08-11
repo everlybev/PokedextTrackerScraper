@@ -242,7 +242,7 @@ def main():
             else:
                 try:
                     past_soup = Pokemon(count, past_soup)
-                except Excepction as theMainException:
+                except Exception as theMainException:
                     print(theMainException)
                     try:
                         msg = 'There was a main() error on dex tracker. Maybe check pokedextracker.  The error is:\n' + str(theMainException)
