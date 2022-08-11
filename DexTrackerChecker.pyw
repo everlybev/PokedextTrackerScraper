@@ -168,6 +168,7 @@ def Pokemon(counter, past):
         #sendEmail = 1 # comment out this line
     else:
         s = bs_response
+        sendEmail = 1
 ##        if bs_response.__contains__('In The Games'):
 ##            if bs_response.__contains__('news') or bs_response.__contains__('istribution'):
 ##                if bs_response.__contains__('asters E') or bs_response.__contains__('mon GO') or bs_response.__contains__('mon UNIT') or bs_response.__contains__('Caf') or bs_response.__contains__('mon Smil'):
