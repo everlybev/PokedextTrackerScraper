@@ -10,12 +10,12 @@ import secrets
 from email.message import EmailMessage
 
 
-#cd C:\Users\dudeo\AppData\Local\Programs\Python\Python39
+#cd F:\Users\dudeo\AppData\Local\Programs\Python\Python39
 #pyinstaller --onefile SerebiiHomeChecker.pyw
-TheConfigurationFile = 'C:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
+TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
 
 
-configTXT = 'C:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
+configTXT = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
 
 #Get email and password
 def login_info():
