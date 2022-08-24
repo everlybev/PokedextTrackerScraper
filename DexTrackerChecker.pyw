@@ -200,7 +200,7 @@ def Pokemon(counter, past):
             dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
             logger.write('\n')
             logger.write(dt_string + '\n')
-            logger.write('No New DSex Tracker Update\n')
+            logger.write('No New Dex Tracker Update\n')
             logger.close()
     else:
         logger = open('Pokemon.txt', 'a')
