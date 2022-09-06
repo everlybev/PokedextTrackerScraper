@@ -39,3 +39,8 @@ Just started.  Not sending the dex tracker email.
 pokedextracker got response
 08/09/2022 07:41:52 PM
 No New DSex Tracker Update
+
+09/06/2022 06:29:28 PM
+pokedextracker got response
+09/06/2022 06:29:28 PM
+Just started.  Not sending the dex tracker email. 
