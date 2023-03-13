@@ -144,6 +144,7 @@ def Pokemon(counter, past):
         response = requests.get(serebii_site)
         site = str(response)
     except:
+        response = 'Not Gotten'
         site = 'Fucked'
     if site != "Fucked":
         logger = open('Pokemon.txt', 'a')
@@ -153,19 +154,23 @@ def Pokemon(counter, past):
         logger.write(dt_string + '\n')
         logger.write(str('pokedextracker got response'))
         logger.close()
-    bs_response = BeautifulSoup(response.text, "lxml")
     try:
-        bs_response = bs_response.body.main.getText()
-    except:
+        bs_response = BeautifulSoup(response.text, "lxml")
         try:
-            bs_response = bs_response.body.getText()
+            bs_response = bs_response.body.main.getText()
         except:
             try:
-                bs_response = bs_response.getText()
+                bs_response = bs_response.body.getText()
             except:
-                bs_response = str(bs_response)
+                try:
+                    bs_response = bs_response.getText()
+                except:
+                    bs_response = str(bs_response)
+    except:
+        bs_response = response
     print(bs_response)
     bs_response = str(bs_response)
+    bad_response = past
     if bs_response == s:
         #there was no change to the site
         s = bs_response
@@ -174,21 +179,11 @@ def Pokemon(counter, past):
     else:
         s = bs_response
         sendEmail = 1
-##        if bs_response.__contains__('In The Games'):
-##            if bs_response.__contains__('news') or bs_response.__contains__('istribution'):
-##                if bs_response.__contains__('asters E') or bs_response.__contains__('mon GO') or bs_response.__contains__('mon UNIT') or bs_response.__contains__('Caf') or bs_response.__contains__('mon Smil'):
-##                    sendEmail = 0
-##                else:
-##                    sendEmail = 1
-##            else:
-##                sendEmail = 0
-##        elif bs_response.__contains__('The Pokémon Company'):
-##            sendEmail = 1
-##        elif bs_response.__contains__('Direct'):
-##            sendEmail = 1
-##        else:
-##            sendEmail = 0
-        #sendEmail = 1 # comment out this line
+        if bad_response == 'Not Gotten':
+            msg = 'Last loop the site was down but it is back up\n\n' + msg
+        elif bs_response == 'Not Gotten':
+            sendEmail = 0
+    #sendEmail = 1 # comment out this line
     if counter > 0:
         if sendEmail == 1:
             email(str(msg))
